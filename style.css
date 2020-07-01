@@ -2,8 +2,8 @@
 Theme Name: Agitpress
 Theme URI: https://github.com/SeattleDSA/agitpress/
 Author: Seattle DSA
-Author URI: https://blog.jacklenox.com
-Description: A theme for WordPress focused on performance and sustainability, forking SustyWP [https://sustywp.com] by Jack Lenox
+Author URI: https://github.com/SeattleDSA/
+Description: A theme for WordPress focused on performance and sustainability, forking SustyWP [https://sustywp.com] by Jack Lenox [https://blog.jacklenox.com]
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -13,7 +13,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Susty is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Susty was based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
@@ -22,6 +22,7 @@ Normalizing styles have been helped along thanks to the fine work of Nicolas Gal
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
+# Variables
 # Typography
 # Elements
 # Forms
@@ -38,6 +39,7 @@ Normalizing styles have been helped along thanks to the fine work of Nicolas Gal
 # Site
 	## Header
 	## Content
+	## Menu
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -383,7 +385,14 @@ template {
 [hidden] {
 	display: none;
 }
-
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+:root {
+  --agitpress-accent: rgb(236,31,39);
+  --agitpress-wide: 95rem;
+  --agitpress-narrow: 45rem;
+}
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -394,7 +403,7 @@ select,
 optgroup,
 textarea {
 	color: rgb(4, 4, 2);
-	font-family: "Helvetica Neue", Helvetica, Arial, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "Nimbus Sans L", "Liberation Sans", Tahoma, Geneva, sans-serif;;
+	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Oxygen-Sans,"Segoe UI",Arial,Ubuntu,Cantarell,sans-serif;
 	font-size: calc( 15px + 4 * (100vw / 1500));
 	line-height: 1.5;
 }
@@ -412,7 +421,9 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0;
+	border-left: 2px solid var(--agitpress-accent);
+	padding-left: 1rem;
 }
 
 address {
@@ -604,7 +615,7 @@ a {
 	border-bottom: 0.2em solid transparent;
 }
 
-a#susty-back-link {
+a#agitpress-back-link {
 	padding: .3em .6em;
 }
 
@@ -613,9 +624,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-	/*color: midnightblue;*/
-	border-bottom-style: solid;
-	border-bottom-color: inherit;
+	border-bottom: solid var(--agitpress-accent);
 }
 
 a:focus {
@@ -893,14 +902,18 @@ svg * {
 ## Content
 --------------------------------------------------------------*/
 #content {
-	max-width: 33em;
+	max-width: var(--agitpress-narrow);
 	margin: 0 auto;
 	padding: 0 1em;
 }
 
+.page-template-widescreen #content {
+	max-width: var(--agitpress-wide);
+}
+
 article a, nav a {
-	background: rgb(252, 248, 243) none repeat scroll 0% 0%;
-	border-bottom: 0.1em dotted;
+	color: var(--agitpress-accent);
+	border-bottom: 0.1em dotted var(--agitpress-accent);
 	line-height: 1.6em;
 }
 
@@ -938,4 +951,12 @@ footer#colophon {
 	text-align: center;
 	padding: 0 1em;
 	font-size: .75em;
+}
+
+/*--------------------------------------------------------------
+## Menu
+--------------------------------------------------------------*/
+ul.menu {
+	list-style: none;
+	padding: 0;
 }

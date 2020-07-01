@@ -7,7 +7,7 @@
  * @package Susty
  */
 
-if ( ! function_exists( 'susty_setup' ) ) :
+if ( ! function_exists( 'agitpress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'susty_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function susty_setup() {
+	function agitpress_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Susty WP, use a find and replace
-		 * to change 'susty' to the name of your theme in all the template files.
+		 * to change 'agitpress' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'susty', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'agitpress', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ if ( ! function_exists( 'susty_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'susty' ),
+			'menu-1' => esc_html__( 'Primary', 'agitpress' ),
 		) );
 
 		/*
@@ -60,7 +60,7 @@ if ( ! function_exists( 'susty_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'susty_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'agitpress_custom_background_args', array(
 			'default-color' => 'fffefc',
 			'default-image' => '',
 		) ) );
@@ -81,7 +81,7 @@ if ( ! function_exists( 'susty_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'susty_setup' );
+add_action( 'after_setup_theme', 'agitpress_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -90,19 +90,19 @@ add_action( 'after_setup_theme', 'susty_setup' );
  *
  * @global int $content_width
  */
-function susty_content_width() {
+function agitpress_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'susty_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'agitpress_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'susty_content_width', 0 );
+add_action( 'after_setup_theme', 'agitpress_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
-function susty_scripts() {
-	wp_enqueue_style( 'susty-style', get_stylesheet_uri() );
+function agitpress_scripts() {
+	wp_enqueue_style( 'agitpress-style', get_template_directory_uri() . '/style.min.css' );
 
 	wp_deregister_script( 'wp-embed' );
 
@@ -110,7 +110,7 @@ function susty_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'susty_scripts' );
+add_action( 'wp_enqueue_scripts', 'agitpress_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -137,19 +137,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-function susty_nav_rewrite_rule() {
+function agitpress_nav_rewrite_rule() {
 	add_rewrite_rule( 'menu', 'index.php?menu=true', 'top' );
 }
 
-add_action( 'init', 'susty_nav_rewrite_rule' );
+add_action( 'init', 'agitpress_nav_rewrite_rule' );
 
-function susty_register_query_var( $vars ) {
+function agitpress_register_query_var( $vars ) {
 	$vars[] = 'menu';
 
 	return $vars;
 }
 
-add_filter( 'query_vars', 'susty_register_query_var' );
+add_filter( 'query_vars', 'agitpress_register_query_var' );
 
 add_filter( 'template_include', function( $path ) {
 	if ( get_query_var( 'menu' ) ) {
@@ -159,8 +159,8 @@ add_filter( 'template_include', function( $path ) {
 });
 
 // Remove dashicons in frontend for unauthenticated users
-add_action( 'wp_enqueue_scripts', 'susty_dequeue_dashicons' );
-function susty_dequeue_dashicons() {
+add_action( 'wp_enqueue_scripts', 'agitpress_dequeue_dashicons' );
+function agitpress_dequeue_dashicons() {
 	if ( ! is_user_logged_in() ) {
 		wp_deregister_style( 'dashicons' );
 	}

@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
 
 <div id="page">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'susty' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'agitpress' ); ?></a>
 
 	<header id="masthead">
 		<div class="logo">
@@ -29,7 +29,7 @@
 				the_custom_logo();
 			else :
 				?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img alt="Susty WP logo" src="<?php echo esc_url( get_template_directory_uri() . '/images/eco-chat.svg' ); ?>"><span class="screen-reader-text"><?php esc_html_e( 'Home', 'susty' ); ?></span></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img alt="<?php bloginfo( 'name' ); ?> Logo" src="<?php echo esc_url( get_template_directory_uri() . '/images/default.svg' ); ?>"><span class="screen-reader-text"><?php esc_html_e( 'Home', 'agitpress' ); ?></span></a>
 				<?php
 			endif;
 			?>
@@ -50,17 +50,17 @@
 
 			if ( get_query_var( 'menu' ) ) :
 				?>
-				<a id="susty-back-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">&#x2716;<span class="screen-reader-text"><?php esc_html_e( 'Close menu', 'susty' ); ?></span></a>
+				<a id="agitpress-back-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">&#x2716;<span class="screen-reader-text"><?php esc_html_e( 'Close menu', 'agitpress' ); ?></span></a>
 				<script>
-					var susty_home_url = '<?php echo esc_url( home_url( '/' ) ); ?>';
-					if ( 0 === document.referrer.indexOf( susty_home_url ) ) {
-						document.getElementById( 'susty-back-link' ).href = document.referrer;
+					var agitpress_home_url = '<?php echo esc_url( home_url( '/' ) ); ?>';
+					if ( 0 === document.referrer.indexOf( agitpress_home_url ) ) {
+						document.getElementById( 'agitpress-back-link' ).href = document.referrer;
 					}
 				</script>
 				<?php
 			else :
 				?>
-				<a href="<?php echo esc_url( ( get_option( 'permalink_structure' ) ? home_url( '/menu/' ) : home_url( '/?menu' ) ) ); ?>"><?php esc_html_e( 'Menu', 'susty' ); ?></a>
+				<a href="<?php echo esc_url( ( get_option( 'permalink_structure' ) ? home_url( '/menu/' ) : home_url( '/?menu' ) ) ); ?>"><?php esc_html_e( 'Menu', 'agitpress' ); ?></a>
 				<?php
 			endif;
 		
