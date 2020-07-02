@@ -53,7 +53,7 @@
 		?>
 	</div>
 
-	<footer>
+	<footer class="entry-footer">
 		<?php susty_wp_entry_footer(); ?>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->
