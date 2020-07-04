@@ -30,6 +30,15 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+		
+			<?php if ( is_active_sidebar( 'blog_sidebar_1' ) ) : ?>
+				<aside class="sidebar">
+					<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+						<?php dynamic_sidebar( 'blog_sidebar_1' ); ?>
+					</div><!-- #primary-sidebar -->
+				</aside>
+			<?php endif; ?>
+		
 	</div><!-- #primary -->
 
 <?php

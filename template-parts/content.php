@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				susty_wp_posted_on();
-				susty_wp_posted_by();
+				agitpress_wp_posted_on();
+				agitpress_wp_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header>
 
-	<?php susty_wp_post_thumbnail(); ?>
+	<?php agitpress_wp_post_thumbnail(); ?>
 
 	<div>
 		<?php

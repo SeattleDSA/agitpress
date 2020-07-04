@@ -392,6 +392,8 @@ template {
   --agitpress-accent: rgb(236,31,39);
   --agitpress-wide: 95rem;
   --agitpress-narrow: 45rem;
+  --agitpress-blog: 60rem;
+  --agitpress-sidebar: 30rem;
   --agitpress-muted: rgb(160,160,160);
 }
 /*--------------------------------------------------------------
@@ -908,8 +910,35 @@ svg * {
 	padding: 0 1em;
 }
 
-.page-template-widescreen #content {
+.page-template-widescreen #content, .single-post #content {
 	max-width: var(--agitpress-wide);
+}
+
+.single-post #primary {
+	display: flex;
+	flex-direction: row;
+}
+
+.single-post #primary #main {
+	width: var(--agitpress-blog);
+	display: inline-flex;
+	flex-direction: column;
+	margin-right: 5rem;
+}
+.single-post #primary .sidebar {
+	width: var(--agitpress-sidebar);
+	display: inline-flex;
+}
+
+@media only screen and (max-width: 600px) {
+	.single-post #primary {
+		display: flex;
+		flex-direction: column;
+	}
+	.single-post #primary #main, .single-post #primary .sidebar {
+		display: flex;
+		width: 100%;
+	}
 }
 
 article a, nav a {
