@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Susty
+ * @package Agitpress
  */
 
 ?>
@@ -36,7 +36,7 @@
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'susty' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'agitpress' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -47,13 +47,13 @@
 		) );
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'susty' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'agitpress' ),
 			'after'  => '</div>',
 		) );
 		?>
 	</div>
 
 	<footer class="entry-footer">
-		<?php susty_wp_entry_footer(); ?>
+		<?php agitpress_wp_entry_footer(); ?>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

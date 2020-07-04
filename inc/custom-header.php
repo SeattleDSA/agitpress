@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Susty
+ * @package Agitpress
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses susty_wp_header_style()
+ * @uses agitpress_wp_header_style()
  */
-function susty_wp_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'susty_wp_custom_header_args', array(
+function agitpress_wp_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'agitpress_wp_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'susty_wp_header_style',
+		'wp-head-callback'       => 'agitpress_wp_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'susty_wp_custom_header_setup' );
+add_action( 'after_setup_theme', 'agitpress_wp_custom_header_setup' );
 
-if ( ! function_exists( 'susty_wp_header_style' ) ) :
+if ( ! function_exists( 'agitpress_wp_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see susty_wp_custom_header_setup().
+	 * @see agitpress_wp_custom_header_setup().
 	 */
-	function susty_wp_header_style() {
+	function agitpress_wp_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
