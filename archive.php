@@ -31,8 +31,9 @@ get_header();
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 * get_post_type() 
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', 'archive');
 
 			endwhile;
 
@@ -46,6 +47,13 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+		<footer class="entry-footer">
+			<?php if ( is_active_sidebar( 'blog_end_call_to_action' ) ) : ?>
+					<aside class="blog-end-call-to-action widget-area" role="complementary">
+							<?php dynamic_sidebar( 'blog_end_call_to_action' ); ?>
+					</aside>
+			<?php endif; ?>
+		</footer>
 	</div><!-- #primary -->
 
 <?php

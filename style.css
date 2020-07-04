@@ -628,7 +628,15 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-	border-bottom: 0.05rem solid var(--agitpress-accent);
+	border-bottom: 0.05em solid var(--agitpress-accent);
+}
+
+#content a {
+	border-bottom: 0.05em dotted var(--agitpress-accent);
+}
+
+#content a:hover, #content a:focus, #content a:active {
+	border-bottom: 0.05em solid var(--agitpress-accent);
 }
 
 a:focus {
@@ -637,6 +645,14 @@ a:focus {
 
 a:hover, a:active {
 	outline: 0;
+}
+
+a.post-edit-link {
+    background-color: var(--agitpress-accent);
+    padding: 0.5rem 1rem;
+    color: white;
+    margin: 1rem 0;
+    display: inline-flex;
 }
 
 /*--------------------------------------------------------------
