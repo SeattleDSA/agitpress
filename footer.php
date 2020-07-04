@@ -11,10 +11,7 @@
 	</div>
 
 	<footer id="colophon">
-		<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Seattle DSA | Agitpress, a fork of SustyWP' ) );
-		?>
+		<a href="https://github.com/SeattleDSA/agitpress">Agitpress</a>, a fork of <a href="https://github.com/jacklenox/susty">SustyWP</a>
 	</footer>
 </div>
 
