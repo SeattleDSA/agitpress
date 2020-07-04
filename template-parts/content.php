@@ -11,6 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header>
+		<?php agitpress_wp_entry_tags(); ?>
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1>', '</h1>' );
@@ -54,6 +55,10 @@
 	</div>
 
 	<footer class="entry-footer">
-		<?php agitpress_wp_entry_footer(); ?>
+		<?php if ( is_active_sidebar( 'blog_end_call_to_action' ) ) : ?>
+				<aside class="blog-end-call-to-action widget-area" role="complementary">
+						<?php dynamic_sidebar( 'blog_end_call_to_action' ); ?>
+				</aside>
+		<?php endif; ?>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

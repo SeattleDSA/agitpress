@@ -30,6 +30,6 @@
 	</div>
 
 	<footer class="entry-footer">
-		<?php agitpress_wp_entry_footer(); ?>
+		<?php agitpress_wp_entry_tags(); ?>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -40,6 +40,7 @@ Normalizing styles have been helped along thanks to the fine work of Nicolas Gal
 	## Header
 	## Content
 	## Menu
+	## Widgets
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -627,7 +628,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-	border-bottom: 0.1em solid var(--agitpress-accent);
+	border-bottom: 0.05rem solid var(--agitpress-accent);
 }
 
 a:focus {
@@ -933,6 +934,7 @@ svg * {
 .single-post #primary .sidebar {
 	width: var(--agitpress-sidebar);
 	display: inline-flex;
+	flex-flow: column-reverse;
 }
 
 @media only screen and (max-width: 600px) {
@@ -958,6 +960,11 @@ article > header > h1, article > header > h2 {
 	margin: 0 0 .4em 0;
 }
 
+article.post header {
+    border-bottom: 1px dotted var(--agitpress-muted);
+    padding: 1rem 0;
+}
+
 article .entry-footer {
 	border-top: 1px solid var(--agitpress-muted);
 }
@@ -972,14 +979,15 @@ article .entry-footer {
 
 .cat-links {
 	display: flex;
-	align-items: center;
+	margin-bottom: 1rem;
 }
 
-.cat-links a:first-of-type {
-	margin-left: .5em;
+.cat-links a {
+	margin: 0 .5em 0 0;
+	border-bottom: 1px dotted var(--agitpress-accent);
 }
 
-.cat-links a, .comments-link a, .edit-link a {
+.comments-link a, .edit-link a {
 	padding: 0 .5em;
 	margin: 0 .5em 0 0;
 }
@@ -1038,3 +1046,11 @@ ul.sub-menu li {
  	color: var(--agitpress-accent);
  	border-bottom: solid var(--agitpress-accent);
  }
+
+ /*--------------------------------------------------------------
+## Menu
+--------------------------------------------------------------*/
+aside.blog-end-call-to-action {
+    background: #f3f3f3;
+    padding: 0.5rem 2rem;
+}
