@@ -1,13 +1,18 @@
 <?php
-/*
-Template Name: Widescreen
+/**
+* Template Name: Narrow
+* @Part of the agitpress theme
+* Widescreen container for complex editorial use and better support of Gutenberg columns and blocks.
+*
+*
+* @package Agitpress
 */
 
 get_header();
 ?>
 
-	<div id="primary">
-		<main id="main">
+	<div id="primary" class="grid grid-container grid-narrow">
+		<main id="main" class="large-12">
 
 		<?php
 		while ( have_posts() ) :

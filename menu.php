@@ -1,9 +1,9 @@
 <?php
 get_header();
 ?>
-
-		<nav id="site-navigation" class="main-navigation">
-			<h1><?php esc_html_e( 'Menu', 'agitpress' );?></h1>
+	<div class="grid grid-container grid-wide">
+		<nav id="site-navigation" class="main-navigation large-12">
+			<h1 class=""><?php esc_html_e( 'Menu', 'agitpress' );?></h1>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
@@ -11,6 +11,6 @@ get_header();
 			) );
 			?>
 		</nav><!-- #site-navigation -->
-
+	</div>
 <?php
 get_footer();

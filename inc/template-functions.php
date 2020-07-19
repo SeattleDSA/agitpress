@@ -26,6 +26,10 @@ function agitpress_wp_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'agitpress_wp_body_classes' );
 
+
+// Register Breadcrumbs
+require_once(get_template_directory().'/inc/breadcrumbs.php'); 
+
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */

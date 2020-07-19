@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<div id="primary">
-		<main id="main">
+	<div id="primary" class="grid grid-container grid-wide">
+		<main id="main" class="large-8">
 
 		<?php
 		while ( have_posts() ) :
@@ -31,13 +31,13 @@ get_header();
 
 		</main><!-- #main -->
 		
-			<?php if ( is_active_sidebar( 'blog_sidebar_1' ) ) : ?>
-				<aside class="sidebar">
-					<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-						<?php dynamic_sidebar( 'blog_sidebar_1' ); ?>
-					</div><!-- #primary-sidebar -->
-				</aside>
-			<?php endif; ?>
+		<?php if ( is_active_sidebar( 'blog_sidebar_1' ) ) : ?>
+			<aside class="sidebar large-3">
+				<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+					<?php dynamic_sidebar( 'blog_sidebar_1' ); ?>
+				</div><!-- #primary-sidebar -->
+			</aside>
+		<?php endif; ?>
 		
 	</div><!-- #primary -->
 

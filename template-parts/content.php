@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('large-12'); ?>>
 	<header>
 		<?php agitpress_wp_entry_tags(); ?>
 		<?php
@@ -22,10 +22,8 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-				<?php
-				agitpress_wp_posted_on();
-				agitpress_wp_posted_by();
-				?>
+				<?php agitpress_wp_posted_by(); ?><br>
+				<?php agitpress_wp_posted_on(); ?><span class="post-divider"> 🌹 </span><?php agitpress_wp_post_readtime();?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header>

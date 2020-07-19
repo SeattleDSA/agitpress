@@ -127,6 +127,11 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+/* DISABLED while exploring Gutenberg first approach
+* Adds Custom Metaboxes for complex homepage layouts
+* require get_template_directory().'/inc/dsa-metaboxes.php';
+*/
+
 /**
  * Load Jetpack compatibility file.
  */

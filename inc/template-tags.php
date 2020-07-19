@@ -46,9 +46,21 @@ if ( ! function_exists( 'agitpress_wp_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="post-byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
+endif;
+
+if ( ! function_exists( 'agitpress_wp_post_readtime' ) ) :
+	/**
+	 * Prints HTML with meta information for estiamated read time.
+	 */
+	function agitpress_wp_post_readtime() {
+			$readtimeContent = str_word_count( strip_tags( esc_html( get_the_content())));
+			$readtimeSum = $readtimeContent / 200;
+			echo '<span class="post-readtime">' . round($readtimeSum,1) . ' minute read</span>';
+	}
+
 endif;
 
 if ( ! function_exists( 'agitpress_wp_entry_tags' ) ) :
@@ -62,14 +74,14 @@ if ( ! function_exists( 'agitpress_wp_entry_tags' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'agitpress' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'agitpress' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="post-category cat-links">' . esc_html__( '%1$s', 'agitpress' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'agitpress' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'agitpress' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="post-tags tags-links">' . esc_html__( 'Tagged %1$s', 'agitpress' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 

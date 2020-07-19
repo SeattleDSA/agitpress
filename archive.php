@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<div id="primary">
-		<main id="main">
+	<div id="primary" class="grid grid-container grid-wide">
+		<main id="main" class="large-12">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -47,7 +47,7 @@ get_header();
 		?>
 
 		</main><!-- #main -->
-		<footer class="entry-footer">
+		<footer class="entry-footer large-12">
 			<?php if ( is_active_sidebar( 'blog_end_call_to_action' ) ) : ?>
 					<aside class="blog-end-call-to-action widget-area" role="complementary">
 							<?php dynamic_sidebar( 'blog_end_call_to_action' ); ?>

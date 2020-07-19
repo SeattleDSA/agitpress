@@ -10,8 +10,8 @@
 
 	</div>
 
-	<footer id="colophon">
-		<a href="https://github.com/SeattleDSA/agitpress">Agitpress</a>, a fork of <a href="https://github.com/jacklenox/susty">SustyWP</a>
+	<footer id="colophon" class="grid grid-container grid-wide">
+		<p class="large-12"><a href="https://github.com/SeattleDSA/agitpress">Agitpress</a>, a fork of <a href="https://github.com/jacklenox/susty">SustyWP</a></p>
 	</footer>
 </div>
 

@@ -5,7 +5,8 @@
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
- * different template.
+ * different template. Uses widescreen container for
+ # Gutenberg ease of use.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -15,8 +16,8 @@
 get_header();
 ?>
 
-	<div id="primary">
-		<main id="main">
+	<div id="primary" class="grid grid-container grid-wide">
+		<main id="main" class="large-12">
 
 		<?php
 		while ( have_posts() ) :
