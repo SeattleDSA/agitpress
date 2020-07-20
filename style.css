@@ -399,19 +399,20 @@ template {
 # 
 --------------------------------------------------------------*/
 :root {
-  --agitpress-accent: rgb(236,31,39);
-  --agitpress-gray: rgb(204,204,204);
-  --agitpress-white: rgb(255,255,255);
-  --agitpress-wide: 95rem;
-  --agitpress-narrow: 60rem;
-  --agitpress-blog: 60rem;
-  --agitpress-sidebar: 30rem;
-  --agitpress-muted: rgb(160,160,160);
-  --agitpress-amazon-bg: rgba(35,47,62);
-  --agitpress-amazon-accent: rgba(253,152,0);
-  --agitpress-padding-thicc: 2rem;
-  --agitpress-padding: 0.5rem 1rem;
-  --agitpress-radius: 0.5em;
+	--agitpress-accent: rgb(217, 17, 44);
+	--agitpress-gray: rgb(204,204,204);
+	--agitpress-white: rgb(255,255,255);
+	--agitpress-white: rgb(255,255,255);
+	--agitpress-wide: 95rem;
+	--agitpress-narrow: 60rem;
+	--agitpress-blog: 60rem;
+	--agitpress-sidebar: 30rem;
+	--agitpress-muted: rgb(160,160,160);
+	--agitpress-amazon-bg: rgba(35,47,62);
+	--agitpress-amazon-accent: rgba(253,152,0);
+	--agitpress-padding-thicc: 2rem;
+	--agitpress-padding: 0.5rem 1rem;
+	--agitpress-radius: 0.5em;
 }
 /*--------------------------------------------------------------
 # Typography
@@ -498,7 +499,8 @@ html {
 
 body {
 	background-color: #fffefc;
-	border-top: 0.4rem solid;
+	border-top: 0.4rem solid var(--agitpress-black);
+	padding: 1rem;
 }
 
 hr {
@@ -1079,37 +1081,47 @@ ul.menu {
 
 ul.sub-menu {
     list-style: none;
-    padding: 0 0 0 0.5rem;
-    border-left: 1px solid var(--agitpress-gray);
+    padding: 0;
 }
 
 ul.sub-menu li {
     display: inline-flex;
     text-decoration: none;
-    margin: 0 0.25em;
+    margin: 0.2em 0em 0.2em 0.2em;
     font-size: 0.8rem;
+}
+
+.menu-item {
+	display: flex;
+    vertical-align: middle;
+	margin: 1em 0em 1em 0em;
 }
 
 .menu a {
 	text-decoration: none;
-	border-bottom: solid transparent;
+	border: 1px solid var(--agitpress-accent);
 	font-weight: bold;
+	padding: var(--agitpress-padding);
+	background-color: var(--agitpress-accent);
+	border-radius: var(--agitpress-radius);
+	color: var(--agitpress-white);
 }
 
 .menu .sub-menu a {
     text-decoration: none;
-    border: none;
+    border: 1px solid var(--agitpress-accent);
+    color: var(--agitpress-accent);
     display: flex;
     width: 100%;
     height: 100%;
-    padding: 0.5em;
-    border-bottom: solid transparent;
+    padding: var(--agitpress-padding);
+    background-color:	var(--agitpress-white);
     font-weight: normal;
+    margin: 0em;
  }
 
  .menu-item a:hover {
- 	color: var(--agitpress-accent);
- 	border-bottom: solid var(--agitpress-accent);
+ 	text-decoration: underline;
  }
 
 /*--------------------------------------------------------------
@@ -1224,5 +1236,38 @@ a.button.accent:focus {
 }
 
 body.page-template-page-amazon, .page-template-page-amazon button, .page-template-page-amazon input, .page-template-page-amazon optgroup, .page-template-page-amazon select, .page-template-page-amazon textarea {
-	color: white;
+	color: var(--agitpress-white);
+}
+
+
+/*--------------------------------------------------------------
+## Red (for page-red)
+--------------------------------------------------------------*/
+body.bg-red {
+	background-color: var(--agitpress-accent);
+	color: var(--agitpress-white);
+}
+
+body.bg-red a {
+	color: var(--agitpress-white);
+}
+
+body.bg-red a:hover {
+	color: var(--agitpress-black);
+}
+
+
+
+/*--------------------------------------------------------------
+## Print
+--------------------------------------------------------------*/
+
+@media print {
+	body {
+		color:	var(--agitpress-black);
+		background-color:	var(--agitpress-white);
+	}
+	p, a, blockquote {
+		color:	var(--agitpress-black);	
+	}
 }
