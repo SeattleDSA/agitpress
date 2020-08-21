@@ -18,6 +18,7 @@ Agitpress provides some rudimentary theming for The Events Calendar by applying 
 
 ## CSS Variables
 The following are declared and can be overriden from the Theme Customizer:
+```css
 :root {
 	--agitpress-accent: rgb(217, 17, 44);
 	--agitpress-gray: rgb(204,204,204);
@@ -34,3 +35,4 @@ The following are declared and can be overriden from the Theme Customizer:
 	--agitpress-padding: 0.5rem 1rem;
 	--agitpress-radius: 0.5em;
 }
+```
