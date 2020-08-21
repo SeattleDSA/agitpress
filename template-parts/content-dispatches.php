@@ -6,12 +6,12 @@ Use:	Grid-container with two most recent posts
 */
 ?>
 	<div class="grid grid-container">
-		<div class="large-12">
+		<div class="desktop-12 mobile-12">
 				<a href="<?php echo site_url(); ?>/?post_type=post" class="button-icon icon-typewriter" aria-label="Read all blog posts"></a>
 				<h2 class="dsa-section-title cell">Dispatches</h2>
 		</div>
 	
-		<div class="large-12 archives-latest-section grid"> 
+		<div class="desktop-12 mobile-12 archives-latest-section grid"> 
 			<?php
 				$how_many_last_posts = intval(get_post_meta($post->ID, 'archived-posts-no', true));
 
@@ -24,7 +24,7 @@ Use:	Grid-container with two most recent posts
 				  while($my_query->have_posts() && $counter <= $how_many_last_posts) {
 				    $my_query->the_post(); 
 				    ?>
-				    <div class="card large-12">
+				    <div class="card mobile-12">
 						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 						<p><?php the_time('F j, Y') ?></p>
 					</div>
@@ -36,7 +36,7 @@ Use:	Grid-container with two most recent posts
 				?>
 		</div>
 		
-	<div class="large-12">
+	<div class="mobile-12 desktop-12">
 		<!-- Print a link to all posts -->
 		<a href="<?php echo site_url(); ?>/?post_type=post" class="button" title="Dispatches">See All</a>
 	</div>

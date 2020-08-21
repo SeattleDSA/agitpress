@@ -14,6 +14,8 @@
 		<?php the_title( '<h1>', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
+	<?php agitpress_wp_post_thumbnail_url(); ?>
+
 	<div>
 		<?php
 		the_content();

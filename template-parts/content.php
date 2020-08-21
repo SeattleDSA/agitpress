@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('large-12'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('desktop-12 mobile-12'); ?>>
 	<header>
 		<?php agitpress_wp_entry_tags(); ?>
 		<?php

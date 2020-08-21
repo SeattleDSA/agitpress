@@ -9,11 +9,11 @@ get_header();
 	
 		
 			
-		<nav aria-label="You are here:" role="navigation" class="top-bar large-12">
+		<nav aria-label="You are here:" role="navigation" class="top-bar mobile-12 desktop-12">
 			<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
 		</nav>
 
-		<div id="inner-content" class="large-12">
+		<div id="inner-content" class="mobile-12 desktop-12">
 		    <div id="primary">
 				<main id="main">
 

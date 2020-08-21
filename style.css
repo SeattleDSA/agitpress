@@ -44,6 +44,7 @@ Normalizing styles have been helped along thanks to the fine work of Nicolas Gal
 	## Widgets
 	## Buttons
 	## Card
+	## Calendar
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -645,9 +646,6 @@ a:visited {
 	color: rgb(4, 4, 2);
 }
 
-a:hover, a:focus, a:active {
-	border-bottom: 0.05em solid var(--agitpress-accent);
-}
 
 .hentry a {
 	border-bottom: 0.05em dotted var(--agitpress-accent);
@@ -1000,7 +998,7 @@ footer#colophon {
 }
 
 /*--------------------------------------------------------------
-## Grid
+## /* Invalid character(s) 'Grid' at 1:0. Ignoring. */
 --------------------------------------------------------------*/
 
 .grid {
@@ -1015,61 +1013,113 @@ footer#colophon {
 }
 
 .grid-container {
-	max-width: var(--agitpress-narrow);
+	width: var(--agitpress-narrow);
+	max-width: 100%;
 	margin: 0 auto;
 }
 
 .grid-container.grid-wide {
-	max-width: var(--agitpress-wide);
+	width: var(--agitpress-wide);
+	max-width: 100%;
 }
 
-	.large-1 {
+.mobile-1 {
 	  grid-column: span 1;
 	}
 
-	.large-2 {
+	.mobile-2 {
 	  grid-column: span 2;
 	}
 
-	.large-3 {
+	.mobile-3 {
 	  grid-column: span 3;
 	}
 
-	.large-4 {
+	.mobile-4 {
 	  grid-column: span 4;
 	}
 
-	.large-5 {
+	.mobile-5 {
 	  grid-column: span 5;
 	}
 
-	.large-6 {
+	.mobile-6 {
 	  grid-column: span 6;
 	}
 
-	.large-7 {
+	.mobile-7 {
 	  grid-column: span 7;
 	}
 
-	.large-8 {
+	.mobile-8 {
 	  grid-column: span 8;
 	}
 
-	.large-9 {
+	.mobile-9 {
 	  grid-column: span 9;
 	}
 
-	.large-10 {
+	.mobile-10 {
 	  grid-column: span 10;
 	}
 
-	.large-11 {
+	.mobile-11 {
 	  grid-column: span 11;
 	}
 
-	.large-12 {
+	.mobile-12 {
 	  grid-column: span 12;
 	}
+
+@media only screen and (min-width: 40rem) {
+		.desktop-1 {
+	  grid-column: span 1;
+	}
+
+	.desktop-2 {
+	  grid-column: span 2;
+	}
+
+	.desktop-3 {
+	  grid-column: span 3;
+	}
+
+	.desktop-4 {
+	  grid-column: span 4;
+	}
+
+	.desktop-5 {
+	  grid-column: span 5;
+	}
+
+	.desktop-6 {
+	  grid-column: span 6;
+	}
+
+	.desktop-7 {
+	  grid-column: span 7;
+	}
+
+	.desktop-8 {
+	  grid-column: span 8;
+	}
+
+	.desktop-9 {
+	  grid-column: span 9;
+	}
+
+	.desktop-10 {
+	  grid-column: span 10;
+	}
+
+	.desktop-11 {
+	  grid-column: span 11;
+	}
+
+	.desktop-12 {
+	  grid-column: span 12;
+	}
+}
 
 /*--------------------------------------------------------------
 ## Menu
@@ -1193,6 +1243,18 @@ a.button.accent:focus {
 	border-color: var(--agitpress-accent);
 	box-shadow: 0 6px 30px -10px var(--agitpress-accent);
 	color: white;
+}
+
+/*--------------------------------------------------------------
+## Calendar
+--------------------------------------------------------------*/
+.tribe-common .tribe-common-c-btn, .tribe-common a.tribe-common-c-btn {
+	background-color: var(--agitpress-accent);
+}
+
+.tribe-common .tribe-common-c-btn:focus, .tribe-common .tribe-common-c-btn:hover, .tribe-common a.tribe-common-c-btn:focus, .tribe-common a.tribe-common-c-btn:hover {
+	background-color: var(--agitpress-accent);
+	opacity: 75%;
 }
 
 /*--------------------------------------------------------------

@@ -158,3 +158,40 @@ if ( ! function_exists( 'agitpress_wp_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+if ( ! function_exists( 'agitpress_wp_post_thumbnail_url' ) ) :
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function agitpress_wp_post_thumbnail_url() {
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
+
+		if ( is_singular() ) :
+			?>
+
+		<?php
+			$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+			echo $feature_img_url;
+		?>
+
+		<?php else : ?>
+
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<?php
+			the_post_thumbnail( 'post-thumbnail', array(
+				'alt' => the_title_attribute( array(
+					'echo' => false,
+				) ),
+			) );
+			?>
+		</a>
+
+		<?php
+		endif; // End is_singular().
+	}
+endif;
