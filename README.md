@@ -23,7 +23,6 @@ The following are declared and can be overriden from the Theme Customizer:
 	--agitpress-accent: rgb(217, 17, 44);
 	--agitpress-gray: rgb(204,204,204);
 	--agitpress-white: rgb(255,255,255);
-	--agitpress-white: rgb(255,255,255);
 	--agitpress-wide: 95rem;
 	--agitpress-narrow: 60rem;
 	--agitpress-blog: 60rem;
