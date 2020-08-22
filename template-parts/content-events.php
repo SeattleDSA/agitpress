@@ -30,39 +30,38 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 						$dsa_event_description = $event->post_content;
 						?>
 
-					    <div class="card mobile-12 desktop-6 dsa-events-item">
-					    	<h4><?php echo tribe_get_event_link( $event->ID, $full_link=true); ?></h4>
-					    	<hr>
-					    	<div class="grid">
-						    	<div class="mobile-12 desktop-12 dsa-events-description">
-						    		<p><?php echo strip_tags(substr($dsa_event_description, 0, 300)) ?>...</p>
-									<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" class="button hollow">Find out more</a>
-								</div>
-					    		<div class="mobile-12 desktop-12 dsa-events-details">
+					    <div class="slat mobile-12 desktop-12 dsa-events-item">
+					    	<div class="grid grid-middle">
+					    		<div class="mobile-12 desktop-6 dsa-event-title">
+					    			<strong><?php echo tribe_get_event_link( $event->ID, $full_link=true); ?></strong>
+					    		</div>
+					    		<div class="mobile-12 desktop-3 dsa-events-date">
 						    		<div class="grid grid-middle">
-							    		<div class="mobile-12 desktop-2">
-					    					<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" aria-label="View event details on calendar">
-					    						📅
-					    					</a>
+							    		<div class="mobile-2 desktop-2">
+					    					<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" aria-label="View event details on calendar" class="txt-1rem">📅</a>
 					    			 	</div>
-					    				<div class="mobile-12 desktop-10">
-					    					<p><?php echo tribe_events_event_schedule_details( $event->ID ); ?></p>
+					    				<div class="mobile-10 desktop-10 txt-1rem">
+					    					<?php echo tribe_events_event_schedule_details( $event->ID ); ?>
 					    				</div>
-					    				<div class="mobile-12 desktop-2">
-					    					<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" aria-label="Details on event venue">
-					    						📍
-					    					</a>
-					    				</div>
-					    				<div class="mobile-12 desktop-10">
-						    				<?php if ( tribe_has_venue( $event->ID ) ) {
-												echo '<p>';
+					    				
+					    			</div>
+					    		</div>
+					    		<div class="mobile-12 desktop-3 dsa-events-venue">
+					    			<div class="grid grid-middle">
+					    				<div class="mobile-2 desktop-2">
+						    				<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" aria-label="Details on event venue" class="txt-1rem">📍</a>
+						    			</div>
+						    			<div class="mobile-10 desktop-10 txt-1rem">
+							    			<?php if ( tribe_has_venue( $event->ID ) ) {
+												echo '';
 												echo tribe_get_venue( $event->ID ) . '<br>';
 												echo tribe_get_city( $event->ID ) . ' ' . tribe_get_state( $event->ID );
-												echo '</p>';
-											} 
-											else {
-												echo '<p>TBD</p>'; 
-											} ?>		
+												echo '';
+												} 
+												else {
+													echo 'TBD'; 
+												}
+											?>		
 										</div>
 									</div>
 								</div>

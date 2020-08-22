@@ -43,7 +43,7 @@ Normalizing styles have been helped along thanks to the fine work of Nicolas Gal
 	## Menu
 	## Widgets
 	## Buttons
-	## Card
+	## Cards & Slats
 	## Calendar
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -412,7 +412,7 @@ template {
 	--agitpress-amazon-accent: rgba(253,152,0);
 	--agitpress-padding-thicc: 2rem;
 	--agitpress-padding: 0.5rem 1rem;
-	--agitpress-radius: 0.5em;
+	--agitpress-radius: 0.25em;
 }
 /*--------------------------------------------------------------
 # Typography
@@ -551,7 +551,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
+	border: 1pt solid;
 	border-color: #ccc #ccc #bbb;
 	border-radius: var(--agitpress-radius);
 	background: #e6e6e6;
@@ -896,8 +896,8 @@ header#masthead {
 	display: flex;
 	align-items: center;
 	max-width: var(--agitpress-wide);
-	margin: 2em auto;
-	padding: 0 1em;
+	margin: 0 auto;
+	padding: 1rem;
 }
 
 header#masthead h1, header#masthead p {
@@ -1131,6 +1131,7 @@ ul.menu {
 ul.sub-menu {
     list-style: none;
     padding: 0;
+    border: 1pt solid #DFE2E5;
 }
 
 ul.sub-menu li {
@@ -1191,13 +1192,13 @@ a.button {
     background: linear-gradient(to right,var(--agitpress-white) 0%,var(--agitpress-white) 100%);
     -webkit-animation: 1s infinite Gradient;
     animation: 1s infinite Gradient;
-    border: 2px solid var(--agitpress-accent);
+    border: 1pt solid var(--agitpress-accent);
     padding: .5rem 1rem;
     border-radius: var(--agitpress-radius);
 }
 
 a.button.accent {
-	border: 2px solid var(--agitpress-accent);
+	border: 1pt solid var(--agitpress-accent);
    	background: var(--agitpress-accent);
    	color: var(--agitpress-white);
 	transition: .3s;
@@ -1222,13 +1223,12 @@ a.button:focus {
 a.button.accent:hover,
 a.button.accent:focus {
   border-color: var(--agitpress-accent);
-  background
-  color: var(--agitpress-white);
+  background-color: var(--agitpress-white);
   background-size: 400%;
 }
 
 /*--------------------------------------------------------------
-## Card
+## Cards & Slats
 --------------------------------------------------------------*/
 .card {
 	border-radius: var(--agitpress-radius);
@@ -1244,6 +1244,12 @@ a.button.accent:focus {
 	color: white;
 }
 
+.slat {
+	border: 1px solid #DFE2E5;
+	padding: 1rem;
+	background-color: white;
+}
+
 /*--------------------------------------------------------------
 ## Calendar
 --------------------------------------------------------------*/
@@ -1257,7 +1263,7 @@ a.button.accent:focus {
 }
 
 /*--------------------------------------------------------------
-## Amazon
+## Amazon (for page-amazon)
 --------------------------------------------------------------*/
 .page-template-page-amazon {	
 	background: var(--agitpress-amazon-bg);
@@ -1318,6 +1324,19 @@ body.bg-red a:hover {
 }
 
 
+
+/*--------------------------------------------------------------
+## Utility
+--------------------------------------------------------------*/
+.txt-1rem {
+	font-size: 1rem;
+}
+
+
+.page-template-template-homepage #content {
+	background-color: #F8F9F9;
+	border-top: 1px solid #DFE2E5;;
+}
 
 /*--------------------------------------------------------------
 ## Print

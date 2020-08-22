@@ -16,7 +16,7 @@ Use:	Grid-container with two most recent posts
 				$how_many_last_posts = intval(get_post_meta($post->ID, 'archived-posts-no', true));
 
 				/* Here, we're making sure that the number fetched is reasonable. In case it's higher than 200 or lower than 2, we're just resetting it to the default value of 15. */
-				if($how_many_last_posts > 200 || $how_many_last_posts < 2) $how_many_last_posts = 2;
+				if($how_many_last_posts > 200 || $how_many_last_posts < 2) $how_many_last_posts = 4;
 
 				$my_query = new WP_Query('post_type=post&nopaging=1');
 				if($my_query->have_posts()) {
@@ -24,9 +24,16 @@ Use:	Grid-container with two most recent posts
 				  while($my_query->have_posts() && $counter <= $how_many_last_posts) {
 				    $my_query->the_post(); 
 				    ?>
-				    <div class="card mobile-12">
-						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-						<p><?php the_time('F j, Y') ?></p>
+				    <div class="slat mobile-12 desktop-6">
+						<div class="grid">
+							<div class="mobile-6 desktop-4">
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php agitpress_wp_post_thumbnail(); ?></a>
+							</div>
+							<div class="mobile-6 desktop-8">
+								<strong><a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a></strong>
+								<p><?php the_time('F j, Y') ?></p>
+							</div>
+						</div>
 					</div>
 				    <?php
 				    $counter++;
