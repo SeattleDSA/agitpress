@@ -412,6 +412,7 @@ template {
 	--agitpress-amazon-accent: rgba(253,152,0);
 	--agitpress-padding-thicc: 2rem;
 	--agitpress-padding: 0.5rem 1rem;
+	--agitpress-padding-ux: 0.5rem;
 	--agitpress-radius: 6px;
 }
 /*--------------------------------------------------------------
@@ -551,10 +552,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1pt solid;
-	border-color: #ccc #ccc #bbb;
+	border-color: var(--agitpress-accent);
 	border-radius: var(--agitpress-radius);
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	background: white;
+	color: var(--agitpress-accent);
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -565,7 +566,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	background: var(--agitpress-accent);
+	color: white;
 }
 
 button:active, button:focus,
@@ -917,6 +919,17 @@ header#masthead > a > svg {
 	height: 1.8em;
 }
 
+.homepage-header {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: var(--agitpress-padding-ux);
+}
+
 .logo {
 	flex: 0 0 2rem;
 	text-align: center;
@@ -938,10 +951,9 @@ svg * {
 ## Content
 --------------------------------------------------------------*/
 
-article a, nav a {
+article a {
 	color: var(--agitpress-accent);
-	border-bottom: 0.1em dotted var(--agitpress-accent);
-	line-height: 1.6em;
+	line-height: 1.35em;
 }
 
 article > header > h1, article > header > h2 {
@@ -1147,7 +1159,7 @@ ul.sub-menu li {
 	text-decoration: none;
 	border: 1px solid var(--agitpress-accent);
 	font-weight: bold;
-	padding: var(--agitpress-padding);
+	padding: var(--agitpress-padding-ux);
 	background-color: var(--agitpress-accent);
 	border-radius: var(--agitpress-radius);
 	color: var(--agitpress-white);
@@ -1160,7 +1172,7 @@ ul.sub-menu li {
     display: flex;
     width: 100%;
     height: 100%;
-    padding: var(--agitpress-padding);
+    padding: var(--agitpress-padding-ux);
     background-color:	var(--agitpress-white);
     font-weight: normal;
     margin: 0em;
@@ -1189,7 +1201,7 @@ a.button {
     -webkit-animation: 1s infinite Gradient;
     animation: 1s infinite Gradient;
     border: 1pt solid var(--agitpress-accent);
-    padding: .5rem 1rem;
+    padding: var(--agitpress-padding-ux);
     border-radius: var(--agitpress-radius);
     text-decoration: none;
 }
@@ -1214,7 +1226,7 @@ a.button:focus {
     animation: 1s infinite Gradient;
     color: var(--agitpress-white);
     text-shadow: 0 2px 4px rgba(0,0,0,.25);
-    padding: .5rem 1rem;
+    padding: var(--agitpress-padding-ux);
     opacity: 1;
 }
 
