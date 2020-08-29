@@ -26,13 +26,29 @@ Use:	Grid-container with two most recent posts
 				    ?>
 				    <div class="slat mobile-12 desktop-6">
 						<div class="grid">
-							<div class="mobile-6 desktop-4">
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php agitpress_wp_post_thumbnail(); ?></a>
-							</div>
-							<div class="mobile-6 desktop-8">
-								<strong><a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a></strong>
-								<p><?php the_time('F j, Y') ?></p>
-							</div>
+							<?php if ( has_post_thumbnail() ) { ?>
+							    <div class="mobile-6 desktop-4">
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php agitpress_wp_post_thumbnail(); ?></a>
+								</div>
+								<div class="mobile-6 desktop-8">
+									<strong>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+									</strong>
+									<p><?php the_time('F j, Y') ?></p>
+								</div>
+							<?php 
+							}
+							else {
+							?>
+								<div class="mobile-12 desktop-12">
+									<strong>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+									</strong>
+									<p><?php the_time('F j, Y') ?></p>
+								</div>
+							<?php 
+							}
+							?>
 						</div>
 					</div>
 				    <?php

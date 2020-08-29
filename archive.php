@@ -10,8 +10,14 @@
 get_header();
 ?>
 
-	<div id="primary" class="grid grid-container grid-wide">
-		<main id="main" class="large-12">
+	<div id="primary" class="grid grid-container grid-narrow">
+		<?php if ( is_active_sidebar( 'blog_end_call_to_action' ) ) : ?>
+			<aside class="blog-end-call-to-action widget-area desktop-12 mobile-12" role="complementary">
+					<?php dynamic_sidebar( 'blog_end_call_to_action' ); ?>
+			</aside>
+		<?php endif; ?>
+
+		<main id="main" class="mobile-12 desktop-12">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -47,12 +53,8 @@ get_header();
 		?>
 
 		</main><!-- #main -->
-		<footer class="entry-footer large-12">
-			<?php if ( is_active_sidebar( 'blog_end_call_to_action' ) ) : ?>
-					<aside class="blog-end-call-to-action widget-area" role="complementary">
-							<?php dynamic_sidebar( 'blog_end_call_to_action' ); ?>
-					</aside>
-			<?php endif; ?>
+		<footer class="entry-footer mobile-12 desktop-4">
+			
 		</footer>
 	</div><!-- #primary -->
 

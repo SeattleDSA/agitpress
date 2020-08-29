@@ -9,8 +9,11 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
+<article id="post-<?php the_ID(); ?>" <?php post_class('grid'); ?>>
+	<div class="mobile-6 desktop-3 archive-post-thumbnail">
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php agitpress_wp_post_thumbnail(); ?></a>
+	</div>
+	<header class="desktop-9 mobile-12">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1>', '</h1>' );
@@ -29,43 +32,6 @@
 		<?php endif; ?>
 	</header>
 
-	<?php agitpress_wp_post_thumbnail(); ?>
-
-	<div>
-		<?
-		/**
-		 * Filter the except length to 20 words.
-		 *
-		 * @param int $length Excerpt length.
-		 * @return int (Maybe) modified excerpt length.
-		 */
-		function wpdocs_custom_excerpt_length( $length ) {
-		    return 20;
-		}
-		add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-		?>
-
-		<?php
-		/**
-		*	the_content( sprintf(
-		*		wp_kses(
-		*			translators: %s: Name of current post. Only visible to screen readers
-		*			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'agitpress' ),
-		*			array(
-		*				'span' => array(
-		*					'class' => array(),
-		*				),
-		*			)
-		*		),
-		*		get_the_title()
-		*	) );
-		*
-		*	wp_link_pages( array(
-		*		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'agitpress' ),
-		*		'after'  => '</div>',
-		*	) );
-		*/
-		?> 
-	</div>
+	
 	
 </article><!-- #post-<?php the_ID(); ?> -->

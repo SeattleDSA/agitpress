@@ -412,7 +412,7 @@ template {
 	--agitpress-amazon-accent: rgba(253,152,0);
 	--agitpress-padding-thicc: 2rem;
 	--agitpress-padding: 0.5rem 1rem;
-	--agitpress-radius: 0.25em;
+	--agitpress-radius: 6px;
 }
 /*--------------------------------------------------------------
 # Typography
@@ -426,7 +426,7 @@ textarea {
 	color: rgb(4, 4, 2);
 	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Oxygen-Sans,"Segoe UI",Arial,Ubuntu,Cantarell,sans-serif;
 	font-size: calc( 15px + 4 * (100vw / 1500));
-	line-height: 1.5;
+	line-height: 1.35;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -500,7 +500,6 @@ html {
 body {
 	background-color: #fffefc;
 	border-top: 0.4rem solid var(--agitpress-black);
-	padding: 1rem;
 }
 
 hr {
@@ -632,26 +631,22 @@ textarea {
 # Links
 --------------------------------------------------------------*/
 a {
-	color: rgb(4, 4, 2);
+	color:  var(--agitpress-accent);
 	text-decoration: none;
-	border-bottom: 0.1em solid transparent;
 }
 
 a#agitpress-back-link {
 	padding: .3em .6em;
 }
 
-a:visited {
-	color: rgb(4, 4, 2);
-}
-
-
-.hentry a {
-	border-bottom: 0.05em dotted var(--agitpress-accent);
-}
-
 .hentry a:hover, .hentry a:focus, .hentry a:active {
-	border-bottom: 0.05em solid var(--agitpress-accent);
+	opacity: 0.5;
+	text-decoration: underline;
+}
+
+header a {
+	color: #101010;
+	text-decoration: none;
 }
 
 a:focus {
@@ -660,6 +655,7 @@ a:focus {
 
 a:hover, a:active {
 	outline: 0;
+	text-decoration: underline;
 }
 
 a.post-edit-link {
@@ -897,12 +893,12 @@ header#masthead {
 	align-items: center;
 	max-width: var(--agitpress-wide);
 	margin: 0 auto;
-	padding: 1rem;
+	padding: 0.5rem;
 }
 
 header#masthead h1, header#masthead p {
-	font-size: 1em;
-	line-height: 1em;
+	font-size: 1rem;
+	line-height: 1rem;
 	font-weight: bold;
 	flex: 1;
 	margin: 0;
@@ -922,15 +918,15 @@ header#masthead > a > svg {
 }
 
 .logo {
-	flex: 0 0 2.4em;
+	flex: 0 0 2rem;
 	text-align: center;
 	line-height: 0;
-	margin-right: .5em;
+	margin-right: .5rem;
 }
 
 .logo svg {
-	width: 2.25em;
-	height: 2.25em;
+	width: 2rem;
+	height: 2rem;
 }
 
 svg * {
@@ -1070,7 +1066,7 @@ footer#colophon {
 	  grid-column: span 12;
 	}
 
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 1024px) {
 		.desktop-1 {
 	  grid-column: span 1;
 	}
@@ -1195,6 +1191,7 @@ a.button {
     border: 1pt solid var(--agitpress-accent);
     padding: .5rem 1rem;
     border-radius: var(--agitpress-radius);
+    text-decoration: none;
 }
 
 a.button.accent {
@@ -1218,6 +1215,7 @@ a.button:focus {
     color: var(--agitpress-white);
     text-shadow: 0 2px 4px rgba(0,0,0,.25);
     padding: .5rem 1rem;
+    opacity: 1;
 }
 
 a.button.accent:hover,
@@ -1235,6 +1233,7 @@ a.button.accent:focus {
 	border: 1px solid var(--agitpress-gray);
 	box-shadow: 0 6px 30px -10px var(--agitpress-gray);
 	padding: var(--agitpress-padding-thicc);
+	background-color: white;
 }
 
 .card.red {
@@ -1248,6 +1247,11 @@ a.button.accent:focus {
 	border: 1px solid #DFE2E5;
 	padding: 1rem;
 	background-color: white;
+	font-size: 1rem;
+}
+
+.slat p, .slat figure {
+	margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1349,5 +1353,14 @@ body.bg-red a:hover {
 	}
 	p, a, blockquote {
 		color:	var(--agitpress-black);	
+	}
+}
+
+/*--------------------------------------------------------------
+## Blocks
+--------------------------------------------------------------*/
+@media screen and (min-width: 45rem) {
+	.slat .wp-block-column:not(:first-child) {
+		margin-left: 1rem;
 	}
 }
