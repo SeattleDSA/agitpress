@@ -10,10 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('grid'); ?>>
-	<div class="mobile-6 desktop-3 archive-post-thumbnail">
+	<div class="small-6 large-3 archive-post-thumbnail">
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php agitpress_wp_post_thumbnail(); ?></a>
 	</div>
-	<header class="desktop-9 mobile-12">
+	<header class="large-9 small-12">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1>', '</h1>' );
@@ -29,6 +29,7 @@
 				agitpress_wp_posted_by();
 				?>
 			</div><!-- .entry-meta -->
+				<?php the_excerpt(); ?>
 		<?php endif; ?>
 	</header>
 

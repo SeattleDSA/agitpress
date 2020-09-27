@@ -9,26 +9,31 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('desktop-12 mobile-12'); ?>>
-	<header>
-		<?php agitpress_wp_entry_tags(); ?>
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1>', '</h1>' );
-		else :
-			the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+<article id="post-<?php the_ID(); ?>" <?php post_class('large-12 small-12'); ?>>
+	<header class="grid">
+		<div class="large-4 small-4 border-top"><?php agitpress_wp_posted_on(); ?></div><div class="large-8 small-8 border-top"><?php agitpress_wp_entry_tags(); ?></div>
+		
+		<div class="large-9 small-12 border-top">
+			
+			<?php
+			if ( is_singular() ) :
+				the_title( '<h1>', '</h1>' );
+			else :
+				the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php agitpress_wp_posted_by(); ?><br>
-				<?php agitpress_wp_posted_on(); ?><span class="post-divider"> 🌹 </span><?php agitpress_wp_post_readtime();?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+			if ( 'post' === get_post_type() ) :
+				?>
+				<div class="entry-meta large-12 small-12">
+					<?php agitpress_wp_posted_by(); ?><span class="post-divider"> 🌹 </span><?php agitpress_wp_post_readtime();?>
+				</div><!-- .entry-meta -->
+				<?php the_excerpt(); ?>
+			<?php endif; ?>
+		</div>
+		<div class="large-3 small-12">
+			<?php agitpress_wp_post_thumbnail(); ?>
+		</div>
 	</header>
-
-	<?php agitpress_wp_post_thumbnail(); ?>
 
 	<div>
 		<?php

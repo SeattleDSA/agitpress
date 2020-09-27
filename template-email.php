@@ -35,11 +35,11 @@ Template Name: Event List (Email)
 		</style><!-- Hide Header/Footer -->
 		
 		
-		<div class="mobile-12 desktop-12">
+		<div class="small-12">
 			<h1><span class="icon-calendar"></span> <?php the_title(); ?></h1>
 			<p>Here are upcoming events:</p>
 		</div>
-		<div class="mobile-12 desktop-12">
+		<div class="small-12">
 		<?php // Retrieve the next 5 upcoming events
 			if(in_array('the-events-calendar/the-events-calendar.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
 				//plugin is activated
@@ -86,7 +86,7 @@ Template Name: Event List (Email)
 					}
 				}
 				else {
-					echo '<div class="mobile-12 desktop-12">This template uses The Events Calendar plugin. Please install.</div>';
+					echo '<div class="small-12">This template uses The Events Calendar plugin. Please install.</div>';
 				}
 		?>
 		</div>

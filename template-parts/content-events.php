@@ -6,10 +6,10 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 */
 ?>
 	<div class="homepage-events grid">
-		<div class="mobile-12 desktop-12">
+		<div class="small-12 large-12">
 				<h2>Upcoming Events</h2>
 		</div>
-		<div class="mobile-12 desktop-12 grid dsa-events-list">		
+		<div class="small-12 large-12 grid dsa-events-list">		
 			<?php // Retrieve the next 2 upcoming events
 				if(in_array('the-events-calendar/the-events-calendar.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
 					//plugin is activated
@@ -30,28 +30,28 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 						$dsa_event_description = $event->post_content;
 						?>
 
-					    <div class="slat mobile-12 desktop-12 dsa-events-item">
+					    <div class="slat small-12 large-12 dsa-events-item">
 					    	<div class="grid grid-middle">
-					    		<div class="mobile-12 desktop-6 dsa-event-title">
+					    		<div class="small-12 large-6 dsa-event-title">
 					    			<strong><?php echo tribe_get_event_link( $event->ID, $full_link=true); ?></strong>
 					    		</div>
-					    		<div class="mobile-12 desktop-3 dsa-events-date">
+					    		<div class="small-12 large-3 dsa-events-date">
 						    		<div class="grid grid-middle">
-							    		<div class="mobile-2 desktop-2">
+							    		<div class="small-2 large-2">
 					    					<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" aria-label="View event details on calendar" class="txt-1rem">📅</a>
 					    			 	</div>
-					    				<div class="mobile-10 desktop-10 txt-1rem">
+					    				<div class="small-10 large-10 txt-1rem">
 					    					<?php echo tribe_events_event_schedule_details( $event->ID ); ?>
 					    				</div>
 					    				
 					    			</div>
 					    		</div>
-					    		<div class="mobile-12 desktop-3 dsa-events-venue">
+					    		<div class="small-12 large-3 dsa-events-venue">
 					    			<div class="grid grid-middle">
-					    				<div class="mobile-2 desktop-2">
+					    				<div class="small-2 large-2">
 						    				<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" aria-label="Details on event venue" class="txt-1rem">📍</a>
 						    			</div>
-						    			<div class="mobile-10 desktop-10 txt-1rem">
+						    			<div class="small-10 large-10 txt-1rem">
 							    			<?php if ( tribe_has_venue( $event->ID ) ) {
 												echo '';
 												echo tribe_get_venue( $event->ID ) . '<br>';
@@ -70,12 +70,12 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 						<br>
 					<?php } ?>
 
-						<div class="mobile-12 desktop-12">
+						<div class="small-12 large-12">
 							<a class="button" href="<?php echo home_url(); ?>/events/">See All</a>
 						</div>
 					<?php }
 				else { 
-					?><div class="mobile-12 desktop-12">This page template uses The Events Calendar plugin.</div>
+					?><div class="small-12 large-12">This page template uses The Events Calendar plugin.</div>
 					<?php 
 				}
 			?>

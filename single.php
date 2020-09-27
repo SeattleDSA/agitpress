@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<div id="primary" class="grid grid-container grid-wide">
-		<main id="main" class="mobile-12 desktop-8">
+		<main id="main" class="small-12 medium-9 large-8">
 
 		<?php
 		while ( have_posts() ) :
@@ -32,7 +32,7 @@ get_header();
 		</main><!-- #main -->
 		
 		<?php if ( is_active_sidebar( 'blog_sidebar_1' ) ) : ?>
-			<aside class="sidebar mobile-12 desktop-3">
+			<aside class="sidebar small-12 medium-3 large-4">
 				<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
 					<?php dynamic_sidebar( 'blog_sidebar_1' ); ?>
 				</div><!-- #primary-sidebar -->

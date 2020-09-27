@@ -8,9 +8,9 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 <div class="inner">
 
 	<div class="contents grid-x grid-margin-x align-center text-center">
-	  <h3 class="cell desktop-12 mobile-12">What we believe</h3>
+	  <h3 class="cell large-12 small-12">What we believe</h3>
 	  
-	  <div class="beliefs-carousel cell desktop-12 mobile-12">
+	  <div class="beliefs-carousel cell large-12 small-12">
 	    
 	    
 	    <ol class="beliefs">
@@ -30,7 +30,7 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 	    </ol>
 	  </div>
 
-	  <div class="action desktop-12 mobile-12">
+	  <div class="action large-12 small-12">
 	    <a class="control prev text-center button hollow" aria-hidden="true">←</a>
 	    <a href="<?php echo home_url(); ?>/platform/" class="dark button">Read full platform</a>
 	    <a class="control next button hollow" aria-hidden="true">→</a>

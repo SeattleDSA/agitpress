@@ -6,12 +6,12 @@ Use:	Grid-container with two most recent posts
 */
 ?>
 	<div class="grid grid-container">
-		<div class="desktop-12 mobile-12">
+		<div class="large-12 small-12">
 				<a href="<?php echo site_url(); ?>/?post_type=post" class="button-icon icon-typewriter" aria-label="Read all blog posts"></a>
 				<h2 class="dsa-section-title cell">Dispatches</h2>
 		</div>
 	
-		<div class="desktop-12 mobile-12 archives-latest-section grid"> 
+		<div class="large-12 small-12 archives-latest-section grid"> 
 			<?php
 				$how_many_last_posts = intval(get_post_meta($post->ID, 'archived-posts-no', true));
 
@@ -24,27 +24,29 @@ Use:	Grid-container with two most recent posts
 				  while($my_query->have_posts() && $counter <= $how_many_last_posts) {
 				    $my_query->the_post(); 
 				    ?>
-				    <div class="slat mobile-12 desktop-6">
+				    <div class="slat small-12 large-6">
 						<div class="grid">
 							<?php if ( has_post_thumbnail() ) { ?>
-							    <div class="mobile-6 desktop-4">
+							    <div class="small-6 large-4">
 									<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php agitpress_wp_post_thumbnail(); ?></a>
 								</div>
-								<div class="mobile-6 desktop-8">
+								<div class="small-6 large-8">
 									<strong>
 										<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 									</strong>
-									<p><?php the_time('F j, Y') ?></p>
+									<p class="txt-gray-50"><?php the_time('F j, Y') ?></p>
+									<?php the_excerpt(); ?>
 								</div>
 							<?php 
 							}
 							else {
 							?>
-								<div class="mobile-12 desktop-12">
+								<div class="small-12 large-12">
 									<strong>
 										<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 									</strong>
-									<p><?php the_time('F j, Y') ?></p>
+									<p class="txt-gray-50"><?php the_time('F j, Y') ?></p>
+									<?php the_excerpt(); ?>
 								</div>
 							<?php 
 							}
@@ -59,7 +61,7 @@ Use:	Grid-container with two most recent posts
 				?>
 		</div>
 		
-	<div class="mobile-12 desktop-12">
+	<div class="small-12 large-12">
 		<!-- Print a link to all posts -->
 		<a href="<?php echo site_url(); ?>/?post_type=post" class="button" title="Dispatches">See All</a>
 	</div>
