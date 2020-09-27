@@ -201,5 +201,14 @@ function agitpress_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
+		register_sidebar( array(
+		'name'          => 'Homepage Call-to-Action',
+		'id'            => 'homepage_call_to_action',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 add_action( 'widgets_init', 'agitpress_widgets_init' );

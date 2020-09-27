@@ -401,6 +401,7 @@ template {
 --------------------------------------------------------------*/
 :root {
 	--agitpress-accent: rgb(217, 17, 44);
+	--agitpress-alert: rgba(255,228,0);
 	--agitpress-gray: rgb(65,63,63);
 	--agitpress-gray-70: rgba(65,63,63,.70);
 	--agitpress-gray-50: rgba(65,63,63,.5);
@@ -668,6 +669,10 @@ a#agitpress-back-link {
 
 .border-top {
 	border-top: 1px solid var(--agitpress-gray);
+}
+
+.border-bottom {
+	border-bottom: 1px solid var(--agitpress-gray);
 }
 
 header a {
@@ -991,7 +996,7 @@ article.post header {
 }
 
 article .entry-footer {
-	border-top: 1px solid var(--agitpress-muted);
+	border-top: 1px solid var(--agitpress-gray);
 }
 
 .entry-meta {
@@ -1257,15 +1262,15 @@ ul.sub-menu li {
 /*--------------------------------------------------------------
 ## Menu
 --------------------------------------------------------------*/
-aside.blog-end-call-to-action {
-    background: #f3f3f3;
+.container-alert {
+    background: var(--agitpress-alert);
     padding: 0.5rem 2rem;
 }
 
 /*--------------------------------------------------------------
 ## Buttons
 --------------------------------------------------------------*/
-a.button {
+a.button, .tribe-events .tribe-events-c-ical__link {
 	border: 2px solid var(--agitpress-accent);
 	border-radius: var(--agitpress-button-radius);
 	font-size: 1rem;
@@ -1275,7 +1280,7 @@ a.button {
   	transition: all .5s ease;
 }
 
-a.button:hover {
+a.button:hover, .tribe-events .tribe-events-c-ical__link:hover {
 	color: white;
 	background-color: var(--agitpress-accent);
 }
@@ -1389,12 +1394,6 @@ body.bg-red a:hover {
 --------------------------------------------------------------*/
 .txt-1rem {
 	font-size: 1rem;
-}
-
-
-.page-template-template-homepage #content {
-	background-color: #F8F9F9;
-	border-top: 1px solid #DFE2E5;;
 }
 
 /*--------------------------------------------------------------

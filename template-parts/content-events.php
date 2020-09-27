@@ -1,8 +1,8 @@
 
 <?php
 /*
-Part:	Beliefs Carousel
-Use:	Shares platform of beliefs, similar to Black Panther Program, as well as points to a Platform landing page at (your__url)/platform
+Part:	Events List
+Use:	List of Events using The Events Calendar Plugin
 */
 ?>
 	<div class="homepage-events grid">
@@ -32,10 +32,10 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 
 					    <div class="slat small-12 large-12 dsa-events-item">
 					    	<div class="grid grid-middle">
-					    		<div class="small-12 large-6 dsa-event-title">
+					    		<div class="small-12 large-5 dsa-event-title">
 					    			<strong><?php echo tribe_get_event_link( $event->ID, $full_link=true); ?></strong>
 					    		</div>
-					    		<div class="small-12 large-3 dsa-events-date">
+					    		<div class="small-12 large-4 dsa-events-date">
 						    		<div class="grid grid-middle">
 							    		<div class="small-2 large-2">
 					    					<a href="<?php echo tribe_get_event_link ( $event->ID  ); ?>" aria-label="View event details on calendar" class="txt-1rem">📅</a>
@@ -67,7 +67,6 @@ Use:	Shares platform of beliefs, similar to Black Panther Program, as well as po
 								</div>
 							</div>
 						</div>
-						<br>
 					<?php } ?>
 
 						<div class="small-12 large-12">
