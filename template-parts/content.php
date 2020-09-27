@@ -31,7 +31,7 @@
 			<?php endif; ?>
 		</div>
 		<div class="large-3 small-12">
-			<?php agitpress_wp_post_thumbnail(); ?>
+			<?php the_post_thumbnail('large'); ?>
 		</div>
 	</header>
 

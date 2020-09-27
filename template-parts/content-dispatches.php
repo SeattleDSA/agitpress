@@ -28,7 +28,7 @@ Use:	Grid-container with two most recent posts
 						<div class="grid">
 							<?php if ( has_post_thumbnail() ) { ?>
 							    <div class="small-6 large-4">
-									<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php agitpress_wp_post_thumbnail(); ?></a>
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="Read <?php the_title_attribute(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
 								</div>
 								<div class="small-6 large-8">
 									<strong>
