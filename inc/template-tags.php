@@ -71,7 +71,7 @@ if ( ! function_exists( 'agitpress_wp_entry_tags' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'agitpress' ) );
+			$categories_list = get_the_category_list( esc_html__( '&nbsp;/&nbsp;', 'agitpress' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="post-category cat-links">' . esc_html__( '%1$s', 'agitpress' ) . '</span>', $categories_list ); // WPCS: XSS OK.
