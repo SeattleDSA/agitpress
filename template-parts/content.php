@@ -13,7 +13,7 @@
 	<header class="grid">
 		<div class="large-4 small-4 border-top"><?php agitpress_wp_posted_on(); ?></div><div class="large-8 small-8 border-top"><?php agitpress_wp_entry_tags(); ?></div>
 		
-		<div class="large-9 small-12 border-top">
+		<div class="large-10 medium-9 small-8 border-top">
 			
 			<?php
 			if ( is_singular() ) :
@@ -27,11 +27,11 @@
 				<div class="entry-meta large-12 small-12">
 					<?php agitpress_wp_posted_by(); ?><span class="post-divider"> 🌹 </span><?php agitpress_wp_post_readtime();?>
 				</div><!-- .entry-meta -->
-				<?php the_excerpt(); ?>
+				<div class="content-excerpt"><?php the_excerpt(); ?></div>
 			<?php endif; ?>
 		</div>
-		<div class="large-3 small-12">
-			<?php the_post_thumbnail('large'); ?>
+		<div class="large-2 medium-3 small-4">
+			<?php the_post_thumbnail('medium'); ?>
 		</div>
 	</header>
 
@@ -59,7 +59,7 @@
 
 	<footer class="entry-footer">
 		<?php if ( is_active_sidebar( 'blog_end_call_to_action' ) ) : ?>
-				<aside class="blog-end-call-to-action widget-area" role="complementary">
+				<aside class="blog-end-call-to-action widget-area container-alert" role="complementary">
 						<?php dynamic_sidebar( 'blog_end_call_to_action' ); ?>
 				</aside>
 		<?php endif; ?>

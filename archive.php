@@ -12,7 +12,7 @@ get_header();
 
 	<div id="primary" class="grid grid-container">
 		<?php if ( is_active_sidebar( 'blog_end_call_to_action' ) ) : ?>
-			<aside class="blog-end-call-to-action widget-area large-12 small-12" role="complementary">
+			<aside class="blog-end-call-to-action widget-area large-12 small-12 container-alert" role="complementary">
 					<?php dynamic_sidebar( 'blog_end_call_to_action' ); ?>
 			</aside>
 		<?php endif; ?>

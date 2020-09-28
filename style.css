@@ -801,6 +801,11 @@ a:hover, a:active {
 	display: none;
 }
 
+.content-excerpt {
+	font-size: 1.35rem;
+	color: var(--agitpress-gray-70);
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
