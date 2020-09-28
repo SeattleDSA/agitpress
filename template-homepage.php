@@ -7,8 +7,6 @@ Template Name: Hompage 2017
 <?php get_header(); ?>
 
 		<article class="grid grid-container grid-wide">
-		    
-
 			<?php if ( is_active_sidebar( 'homepage_call_to_action' ) ) : ?>
 					<aside class="small-12 medium-12 large-3 homepage-call-to-action container-alert widget-area" role="complementary">
 						<?php dynamic_sidebar( 'homepage_call_to_action' ); ?>

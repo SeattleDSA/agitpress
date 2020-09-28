@@ -11,9 +11,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('large-12 small-12'); ?>>
 	<header class="grid">
-		<div class="large-4 small-4 border-top"><?php agitpress_wp_posted_on(); ?></div><div class="large-8 small-8 border-top"><?php agitpress_wp_entry_tags(); ?></div>
 		
-		<div class="large-10 medium-9 small-8 border-top">
+		
+		<div class="large-9 medium-9 small-8 border-top">
 			
 			<?php
 			if ( is_singular() ) :
@@ -29,9 +29,16 @@
 				</div><!-- .entry-meta -->
 				<div class="content-excerpt"><?php the_excerpt(); ?></div>
 			<?php endif; ?>
+
+			<div class="grid">
+				<div class="large-4 small-12 border-top"><?php agitpress_wp_posted_on(); ?></div><div class="large-8 small-12 border-top"><?php agitpress_wp_entry_tags(); ?></div>
+			</div>
 		</div>
-		<div class="large-2 medium-3 small-4">
-			<?php the_post_thumbnail('medium'); ?>
+		<div class="large-3 medium-3 small-4">
+			<figure>
+				<?php the_post_thumbnail('large'); ?>
+				<figurecaption><?php the_post_thumbnail_caption(); ?></figurecaption>
+			</figure>
 		</div>
 	</header>
 

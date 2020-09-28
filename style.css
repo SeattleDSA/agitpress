@@ -39,6 +39,7 @@ Normalizing styles have been helped along thanks to the fine work of Nicolas Gal
 # Site
 	## Header
 	## Content
+	## Asides / Sidbars
 	## Grid
 	## Menu
 	## Widgets
@@ -420,6 +421,7 @@ template {
 	--agitpress-padding-ux: 0.5rem;
 	--agitpress-radius: 6px;
 	--agitpress-button-radius: 3px;
+	--agitpress-txt-meta: 1rem;
 }
 /*--------------------------------------------------------------
 # Typography
@@ -555,7 +557,11 @@ img {
 }
 
 figure {
-	margin: 1em 0;
+	margin: 0;
+}
+
+figurecaption, .cat-links, .posted-on, .txt-meta {
+	font-size: var(--agitpress-txt-meta);
 }
 
 table {
@@ -1028,7 +1034,16 @@ footer#colophon {
 }
 
 /*--------------------------------------------------------------
-## /* Invalid character(s) 'Grid' at 1:0. Ignoring. */
+# Asides & Sidebars
+--------------------------------------------------------------*/
+
+aside.sidebar {
+	align-items: center;
+    display: grid;
+}
+
+/*--------------------------------------------------------------
+# Grid
 --------------------------------------------------------------*/
 
 .grid {
