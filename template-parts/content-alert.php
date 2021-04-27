@@ -2,7 +2,7 @@
 <?php
 /*
 Part:	DSA Alert Box
-Use:	Notifying members of emergencies, changes to established plans, or notices. Modal window on Homepage
+Use:	Notifying members of emergencies, changes to established plans, or notices.
 */
 ?>
 <?php if ( get_post_meta($post->ID, '_dsa_alert_box', true) ) : ?><!-- Begin DSA Alert Box; Conditional -->

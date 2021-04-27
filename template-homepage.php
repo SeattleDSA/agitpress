@@ -8,21 +8,21 @@ Template Name: Hompage 2017
 
 		<article class="grid grid-container grid-wide">
 			<?php if ( is_active_sidebar( 'homepage_call_to_action' ) ) : ?>
-					<aside class="small-12 medium-12 large-3 homepage-call-to-action container-alert widget-area" role="complementary">
+					<aside class="small-12 medium-12 large-12 homepage-call-to-action container-alert widget-area" role="complementary">
 						<?php dynamic_sidebar( 'homepage_call_to_action' ); ?>
 					</aside>
 					
-						<?php if ( is_active_sidebar( 'homepage_featured_text' ) ) : ?>
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-								<div class="small-12 medium-12 large-9">
-									<?php get_template_part( 'template-parts/content', 'homepageFeatured' ); ?> 
-								</div>
-							<?php endwhile; endif; ?>	
-						<?php else: ?>
-							<div class="small-12 medium-12 large-9 container-alert">
-								<h1>Missing: Widget: Homepage Featured Text</h1>
-							</div>
-						<?php endif; ?>
+			<?php if ( is_active_sidebar( 'homepage_featured_text' ) ) : ?>
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<div class="small-12 medium-12 large-12">
+						<?php get_template_part( 'template-parts/content', 'homepageFeatured' ); ?> 
+					</div>
+				<?php endwhile; endif; ?>	
+			<?php else: ?>
+				<div class="small-12 medium-12 large-12 container-alert">
+					<h1>Missing: Widget: Homepage Featured Text</h1>
+				</div>
+			<?php endif; ?>
 					
 			<?php else: ?>
 				<div class="small-12 medium-12 large-12">
