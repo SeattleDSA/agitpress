@@ -12,7 +12,7 @@ get_header();
 ?>
 
 	<div id="primary" class="grid grid-container grid-narrow">
-		<main id="main" class="desktop-12 mobile-12">
+		<main id="main" class="large-12 small-12">
 
 		<?php
 		while ( have_posts() ) :
